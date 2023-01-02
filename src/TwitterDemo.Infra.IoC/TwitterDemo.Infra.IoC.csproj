@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\TwitterDemo.Domain\TwitterDemo.Domain.csproj" />
+    <ProjectReference Include="..\TwitterDemo.Infra.Data.Cache\TwitterDemo.Infra.Data.Cache.csproj" />
+    <ProjectReference Include="..\TwitterDemo.Infra.Data.Read\TwitterDemo.Infra.Data.Read.csproj" />
+    <ProjectReference Include="..\TwitterDemo.Infra.Data.Write\TwitterDemo.Infra.Data.Write.csproj" />
+  </ItemGroup>
+
+</Project>
