@@ -1,0 +1,15 @@
+version: '3.4'
+
+services:
+  twitterdemo.api:
+    image: ${DOCKER_REGISTRY-}twitterdemoapi
+    build:
+      context: .
+      dockerfile: src/TwitterDemo.API/Dockerfile
+  twitterdb:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: Tw1Tt3RUs3R
+    ports:     
+      - 5432:5432  

@@ -1,4 +1,3 @@
-using MediatR;
 using TwitterDemo.Infra.IoC;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -11,9 +10,15 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 // Register dependencies for all layers (Domain, Data, etc)
-builder.Services.AddDependencyInjectionForAllLayers();
+builder.Services
+    .AddDependencyInjectionForAllLayers(
+        writeDbConnectionString: builder.Configuration.GetConnectionString("WriteDbConnectionString") ?? throw new NullReferenceException("[WriteDbConnectionString] not defined in appsettings.json")
+    );
 
 var app = builder.Build();
+
+// Apply EF migrations in DB
+MigrationManager.ApplyMigration(app.Services);
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

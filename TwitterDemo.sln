@@ -25,6 +25,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TwitterDemo.Infra.Data.Read
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TwitterDemo.Infra.Data.Cache", "src\TwitterDemo.Infra.Data.Cache\TwitterDemo.Infra.Data.Cache.csproj", "{B7E58146-550F-4E12-AA9D-0AF2F0338C2F}"
 EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{C7B4C2FB-AF1A-4608-AA09-1C0B16E358BE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -55,6 +57,10 @@ Global
 		{B7E58146-550F-4E12-AA9D-0AF2F0338C2F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B7E58146-550F-4E12-AA9D-0AF2F0338C2F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B7E58146-550F-4E12-AA9D-0AF2F0338C2F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C7B4C2FB-AF1A-4608-AA09-1C0B16E358BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C7B4C2FB-AF1A-4608-AA09-1C0B16E358BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C7B4C2FB-AF1A-4608-AA09-1C0B16E358BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C7B4C2FB-AF1A-4608-AA09-1C0B16E358BE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
