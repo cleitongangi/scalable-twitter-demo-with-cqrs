@@ -1,3 +1,4 @@
+using TwitterDemo.API.Configurations.AutoMapper;
 using TwitterDemo.Infra.IoC;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -8,6 +9,7 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddAutoMapperSetup();
 
 // Register dependencies for all layers (Domain, Data, etc)
 builder.Services

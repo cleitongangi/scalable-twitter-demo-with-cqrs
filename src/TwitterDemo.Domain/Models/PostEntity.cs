@@ -1,4 +1,7 @@
-﻿namespace TwitterDemo.Domain.Models
+﻿using TwitterDemo.Domain.Commands.Posts.NewPost;
+using TwitterDemo.Domain.Enum;
+
+namespace TwitterDemo.Domain.Models
 {
     public class PostEntity
     {
@@ -36,6 +39,20 @@
         public PostEntity()
         {
             Posts = new List<PostEntity>();
+        }
+
+        public static class Factory
+        {
+            public static PostEntity NewPost(NewPostCommand command)
+            {
+                return new PostEntity
+                {
+                    UserId = command.UserId,
+                    Text = command.Text,
+                    CreatedAt = DateTime.Now,
+                    TypeId = (int)PostTypeEnum.Post
+                };
+            }
         }
     }
 }

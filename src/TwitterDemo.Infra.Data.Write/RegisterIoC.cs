@@ -5,6 +5,7 @@ using Microsoft.Extensions.Logging.Debug;
 using System.Reflection;
 using TwitterDemo.Domain.Interfaces.Data;
 using TwitterDemo.Infra.Data.Write.Context;
+using TwitterDemo.Infra.Data.Write.Repositories;
 
 namespace TwitterDemo.Infra.Data.Write
 {
@@ -30,15 +31,15 @@ namespace TwitterDemo.Infra.Data.Write
 
 
             #region Register all repositories
-            //var repositoriesAssembly = typeof(UserRepository).Assembly;
-            //var repositoriesRegistrations =
-            //    from type in repositoriesAssembly.GetExportedTypes()
-            //    where type.Namespace == "TwitterDemo.Infra.Data.Write.Repositories"
-            //    where type.GetInterfaces().Any()
-            //    select new { Interface = type.GetInterfaces().FirstOrDefault(), Implementation = type };
+            var repositoriesAssembly = typeof(PostsRepository).Assembly;
+            var repositoriesRegistrations =
+                from type in repositoriesAssembly.GetExportedTypes()
+                where type.Namespace == "TwitterDemo.Infra.Data.Write.Repositories"
+                where type.GetInterfaces().Any()
+                select new { Interface = type.GetInterfaces().FirstOrDefault(), Implementation = type };
 
-            //foreach (var reg in repositoriesRegistrations)
-            //    services.AddScoped(reg.Interface, reg.Implementation);
+            foreach (var reg in repositoriesRegistrations)
+                services.AddScoped(reg.Interface, reg.Implementation);
             #endregion Register all repositories
 
             return services;

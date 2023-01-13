@@ -12,7 +12,7 @@ namespace TwitterDemo.Infra.Data.Write.EntityConfig
             builder.HasKey(x => x.Id).HasName("pk_posts");
 
             builder.Property(x => x.Id).HasColumnType("bigint").IsRequired().ValueGeneratedOnAdd().UseIdentityColumn();
-            builder.Property(x => x.Text).HasColumnType("varchar(777)").IsRequired(false).HasMaxLength(777);
+            builder.Property(x => x.Text).HasColumnType("varchar(2000)").IsRequired(false).HasMaxLength(2000);
             builder.Property(x => x.CreatedAt).HasColumnType("timestamp").IsRequired();
             builder.Property(x => x.UserId).HasColumnType("bigint").IsRequired();
             builder.Property(x => x.ParentId).HasColumnType("bigint").IsRequired(false);
